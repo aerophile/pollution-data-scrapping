@@ -20,7 +20,7 @@ def url_to_html(url):
 		html = urllib.urlopen(url).read()
 		return html
 	except:
-		print "error : check internet connectivity at" , datetime.datetime.now().time()
+		print "error : check internet connectivity at" , time.time()
 		exit()
 		
 	
