@@ -45,8 +45,17 @@ def main():
 		pm25,pm10 = html_to_pollution_values_cpcb(dpcc.url_to_html(base_page_url+url_suffix[location]))
 		a = pollution_data_class.pollution_data(location,pm25,pm10)
 		a.describe()
-		
 
+def return_object_list():
+	"returns pollution data as a list of object"
+	return_list = []
+	for location in url_suffix:
+		pm25,pm10 = html_to_pollution_values_cpcb(dpcc.url_to_html(base_page_url+url_suffix[location]))
+		object_pollution = pollution_data_class.pollution_data(location,pm25,pm10,-999)
+		return_list.append(object_pollution)
+		
+	return return_list
+		
 
 if __name__ == '__main__':
     # execute only if run as the entry point into the program

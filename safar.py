@@ -41,6 +41,16 @@ def html_to_pollution_values_safar(html):
 	return pm25,pm10,aqi
 
 
+def return_object_list():
+	return_list = []
+	for location in url_suffix:
+		pm25,pm10,aqi = html_to_pollution_values_safar(dpcc.url_to_html(base_page_url+url_suffix[location]))
+		object_pollution = pollution_data_class.pollution_data(location,pm25,pm10,aqi)
+		return_list.append(object_pollution)
+		
+	return return_list
+		
+
 def main():
 	for location in url_suffix:
 		pm25,pm10,aqi = html_to_pollution_values_safar(dpcc.url_to_html(base_page_url+url_suffix[location]))

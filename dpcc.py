@@ -40,6 +40,15 @@ def html_to_pollution_values(html):
 
 	return pm25,pm10
 
+def return_object_list():
+	"returns pollution data as a list of object"
+	return_list = []
+	for location in url_suffix:
+		pm25,pm10 = html_to_pollution_values(url_to_html(base_page_url+url_suffix[location]))
+		object_pollution = pollution_data_class.pollution_data(location,pm25,pm10)
+		return_list.append(object_pollution)
+	return return_list
+
 
 def main():
 	for location in url_suffix:
