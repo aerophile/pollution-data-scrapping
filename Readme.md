@@ -16,9 +16,9 @@ More webstes maybe added by either rasing it as an issue or making a pull reques
 Just execute the entry.py file or run as following inside the directory:
 
 ```
- $Python entry.py
+$ python entry.py
  ```
 
 ## Next to do
-Converting the list of a;; the data points into a Json output.
+Converting the list of the data objects into a Json output.
 
